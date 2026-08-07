@@ -57,34 +57,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,247,
 /* Stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-light);border:1px solid var(--border-light);border-radius:var(--radius);overflow:hidden;margin-top:52px}
 .stat{background:var(--bg-card);padding:22px 14px;text-align:center}
-.stat-num{font-family:var(--font-serif);font-size:1.7rem;font-weight:700;color:var(--accent);line-height:1.2;letter-spacing:-0.02em}
+.stat-num{font-family:var(--font-serif);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;letter-spacing:-0.03em}
 .stat-num .stat-emoji{font-size:inherit;line-height:inherit;font-family:var(--font)}
-.stat-label{font-size:0.76rem;color:var(--text-secondary);margin-top:5px;font-weight:500}
+.stat-label{font-size:0.82rem;color:var(--text-secondary);margin-top:8px;font-weight:600}
 
 /* Sections */
 section.block{padding:78px 0}
 .bg-warm{background:var(--bg-warm)}
 .section-label{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:4px 12px;border-radius:5px;margin-bottom:14px}
-.section-title{font-family:var(--font-serif);font-size:2rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:10px;line-height:1.3}
-.section-desc{font-size:0.94rem;color:var(--text-secondary);max-width:660px;margin-bottom:36px;line-height:1.8}
+.section-title{font-family:var(--font-serif);font-size:2rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:10px;line-height:1.3;text-align:center}
+.section-desc{font-size:0.94rem;color:var(--text-secondary);max-width:860px;margin:0 auto 36px;line-height:1.8;text-align:center}
+section.block>.container{text-align:center}
+section.block>.container>.cards-grid,section.block>.container>.hl-grid,section.block>.container>.table-wrap,section.block>.container>.wf-head,section.block>.container>.wf-row,section.block>.container>.wf-modes{text-align:left}
 
 /* Cards */
-.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{padding:26px 22px;border-radius:var(--radius);background:var(--bg-card);border:1px solid var(--border-light);transition:all var(--transition);display:flex;flex-direction:column}
-.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.04)}
-.card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:15px;background:var(--bg-warm)}
-.card h3{font-size:0.98rem;font-weight:700;margin-bottom:7px;letter-spacing:-0.01em}
-.card p{font-size:0.845rem;color:var(--text-secondary);line-height:1.75;flex:1}
-.card-say{margin-top:12px;padding:9px 12px;border-radius:var(--radius-sm);background:var(--bg-code);border-left:3px solid var(--accent-light);font-size:0.79rem;color:var(--text-secondary);font-family:var(--font-mono);line-height:1.6}
-.card-tag{display:inline-block;align-self:flex-start;margin-top:12px;padding:3px 10px;border-radius:4px;font-size:0.68rem;font-weight:600;background:var(--accent-bg);color:var(--accent)}
+.cards-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.card{padding:18px 24px;border-radius:var(--radius);background:var(--bg-card);border:1px solid var(--border-light);transition:all var(--transition);display:flex;flex-direction:row;align-items:center;gap:16px}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
+.card-icon{display:none}
+.card h3{font-size:0.95rem;font-weight:700;letter-spacing:-0.01em;white-space:nowrap;flex-shrink:0;min-width:140px}
+.card p{display:none}
+.card-say{padding:6px 12px;border-radius:var(--radius-sm);background:var(--bg-code);border-left:3px solid var(--accent-light);font-size:0.82rem;color:var(--text-secondary);font-family:var(--font);line-height:1.6;flex:1}
+.card-tag{display:inline-block;flex-shrink:0;padding:4px 12px;border-radius:4px;font-size:0.72rem;font-weight:600;background:var(--accent-bg);color:var(--accent);white-space:nowrap}
 
 /* Highlight cards */
 .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.hl{padding:24px 22px;border-radius:var(--radius);background:var(--bg-card);border:1px solid var(--border-light);border-top:3px solid var(--accent-light);transition:all var(--transition)}
+.hl{padding:24px 22px;border-radius:var(--radius);background:var(--bg-card);border:1px solid var(--border-light);border-top:3px solid var(--accent-light);transition:all var(--transition);display:flex;flex-direction:column}
 .hl:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.04);border-top-color:var(--accent)}
-.hl h3{font-size:0.95rem;font-weight:700;margin-bottom:8px}
-.hl p{font-size:0.84rem;color:var(--text-secondary);line-height:1.75}
-.hl-detail{margin-top:12px;padding:12px 14px;border-radius:var(--radius-sm);background:var(--bg-code);border:1px solid var(--border-light);font-size:0.78rem;color:var(--text-secondary);line-height:1.7}
+.hl h3{font-size:0.95rem;font-weight:700;margin-bottom:8px;text-align:center}
+.hl p{font-size:0.84rem;color:var(--text-secondary);line-height:1.75;text-align:center}
+.hl-detail{margin-top:auto;padding:12px 14px;border-radius:var(--radius-sm);background:var(--bg-code);border:1px solid var(--border-light);font-size:0.78rem;color:var(--text-secondary);line-height:1.7}
 .hl-detail b{color:var(--text);font-weight:600}
 
 /* Comparison table */
@@ -109,7 +111,7 @@ section.block{padding:78px 0}
 .wf-row:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
 .wf-name{font-size:0.9rem;font-weight:700;letter-spacing:-0.01em}
 .wf-scene{font-size:0.83rem;color:var(--text-secondary);line-height:1.7}
-.wf-trigger{font-family:var(--font-mono);font-size:0.79rem;color:var(--accent);background:var(--accent-bg);padding:6px 11px;border-radius:var(--radius-sm);line-height:1.6;display:inline-block}
+.wf-trigger{font-family:var(--font-mono);font-size:0.79rem;color:var(--accent);background:var(--accent-bg);padding:6px 11px;border-radius:var(--radius-sm);line-height:1.6;display:inline-block;word-break:break-word;overflow-wrap:break-word;max-width:100%}
 .wf-modes{margin-top:28px;padding-top:24px;border-top:1px dashed var(--border)}
 .wf-modes-title{font-size:0.92rem;font-weight:700;color:var(--text);margin-bottom:14px;letter-spacing:-0.01em}
 .wf-modes .wf-row{align-items:center}
@@ -124,6 +126,28 @@ section.block{padding:78px 0}
 footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--border-light);text-align:center}
 .footer-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .footer-badges img{height:20px;display:block}
+
+/* Dark mode */
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1a1918;--bg-warm:#211f1d;--bg-card:#262422;--bg-code:#2a2826;
+    --border:#3d3832;--border-light:#332f2a;
+    --text:#e8e2db;--text-secondary:#a09890;--text-muted:#706860;
+    --accent:#e8a07a;--accent-light:#c96442;--accent-bg:rgba(232,160,122,0.1);
+    --green:#7aaa8a;--blue:#7a9aba;--purple:#9a8aba;--red:#e0907a;
+  }
+  nav{background:rgba(26,25,24,0.9)}
+  .comparison-table thead th{background:var(--bg-warm)}
+  .comparison-table{background:var(--bg-card)}
+  .comparison-table tbody tr:hover{background:var(--bg-warm)}
+  .btn-secondary{background:var(--bg-card);color:var(--text);border-color:var(--border)}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+  .hero-badge{background:var(--bg-card);border-color:var(--border)}
+  .lang-switch{border-color:var(--border)}
+  .lang-switch span:hover:not(.active){background:var(--bg-warm)}
+  .nav-cta{background:var(--text);color:var(--bg)}
+  footer{background:var(--bg)}
+}
 
 @media(max-width:768px){
   .hero{padding:118px 0 62px}
@@ -207,7 +231,7 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 <div class="card">
 <div class="card-icon">🔍</div>
 <h3>🔍 <span data-en="Four-Character Checklist" data-zh="四字诀排查">四字诀排查</span></h3>
-<p><span data-en="The &quot;论证类比&quot; four-character checklist catches it in seconds: Is the first sentence a complete judgment? Does every point have supporting evidence? Is the grouping non-overlapping and exhaustive? Is there a logical ordering within each group?" data-zh=""论证类比"四字诀一秒排查：第一句是不是完整判断句？每个论点有没有理由支撑？分组不重不漏吗？组内有排序吗？">"论证类比"四字诀一秒排查：第一句是不是完整判断句？每个论点有没有理由支撑？分组不重不漏吗？组内有排序吗？</span></p>
+<p><span data-en="The &quot;论证类比&quot; four-character checklist catches it in seconds: Is the first sentence a complete judgment? Does every point have supporting evidence? Is the grouping non-overlapping and exhaustive? Is there a logical ordering within each group?" data-zh="&amp;ldquo;论证类比&amp;rdquo;四字诀一秒排查：第一句是不是完整判断句？每个论点有没有理由支撑？分组不重不漏吗？组内有排序吗？">&ldquo;论证类比&rdquo;四字诀一秒排查：第一句是不是完整判断句？每个论点有没有理由支撑？分组不重不漏吗？组内有排序吗？</span></p>
 <div class="card-say"><span data-en="&quot;My proposal feels off but I can't pinpoint why.&quot;" data-zh="「方案写完总觉得哪里不对」">「方案写完总觉得哪里不对」</span></div>
 <div class="card-tag"><span data-en="论证类比 · 4-second check" data-zh="论证类比 · 4 秒排查">论证类比 · 4 秒排查</span></div>
 </div>
@@ -244,7 +268,7 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 </div>
 </div>
 <div class="hl">
-<h3>🧩 <span data-en="&quot;论证类比&quot; Four-Character Checklist" data-zh=""论证类比"四字诀">"论证类比"四字诀</span></h3>
+<h3>🧩 <span data-en="&amp;ldquo;论证类比&amp;rdquo; Four-Character Checklist" data-zh="&amp;ldquo;论证类比&amp;rdquo;四字诀">&ldquo;论证类比&rdquo;四字诀</span></h3>
 <p><span data-en="A 4-second mental check borrowed from classical Chinese rhetoric, adapted for pyramid validation at every layer." data-zh="借鉴中文古典修辞的 4 秒快速校验法，用来验证金字塔结构的每一层。">借鉴中文古典修辞的 4 秒快速校验法，用来验证金字塔结构的每一层。</span></p>
 <div class="hl-detail">
 <b>论</b> <span data-en="Conclusion first — is the first sentence a complete judgment?" data-zh="结论先行——第一句是完整判断句？">结论先行——第一句是完整判断句？</span><br>
@@ -265,7 +289,7 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 </div>
 <div class="hl">
 <h3>🔺 <span data-en="Dual-Mode Interaction — Quick &amp; Guided" data-zh="双模式交互 — 快捷 &amp; 引导">双模式交互 — 快捷 &amp; 引导</span></h3>
-<p><span data-en="Quick mode fires when you paste text with trigger words. Guided mode activates when you say you need help organizing — two paths, one skill." data-zh="快捷模式在你贴文字加触发词时启动。引导模式在你说"帮我理清思路"时激活——两条路径，一个 Skill。">快捷模式在你贴文字加触发词时启动。引导模式在你说"帮我理清思路"时激活——两条路径，一个 Skill。</span></p>
+<p><span data-en="Quick mode fires when you paste text with trigger words. Guided mode activates when you say you need help organizing — two paths, one skill." data-zh="快捷模式在你贴文字加触发词时启动。引导模式在你说&amp;ldquo;帮我理清思路&amp;rdquo;时激活——两条路径，一个 Skill。">快捷模式在你贴文字加触发词时启动。引导模式在你说&ldquo;帮我理清思路&rdquo;时激活——两条路径，一个 Skill。</span></p>
 <div class="hl-detail">
 <b>🚀 Quick</b> <span data-en="Paste → 7-type diagnosis → pyramid rebuild → polished rewrite" data-zh="贴文本 → 7 类诊断 → 金字塔重组 → 优化文稿">贴文本 → 7 类诊断 → 金字塔重组 → 优化文稿</span><br>
 <b>💬 Guided</b> <span data-en="Dialogue-driven pyramid construction from fuzzy ideas" data-zh="对话引导，从模糊想法构建金字塔">对话引导，从模糊想法构建金字塔</span>
@@ -281,7 +305,7 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 </div>
 <div class="hl">
 <h3>🏋️ <span data-en="Logic Training Mode — 4 Drill Types" data-zh="逻辑训练模式 — 4 种题型">逻辑训练模式 — 4 种题型</span></h3>
-<p><span data-en="When you say &quot;train me,&quot; the skill switches to coaching mode with four drill types and instant feedback." data-zh="说"逻辑训练"或"练一下"就能进入教练模式，四种题型配即时反馈。">说"逻辑训练"或"练一下"就能进入教练模式，四种题型配即时反馈。</span></p>
+<p><span data-en="When you say &quot;train me,&quot; the skill switches to coaching mode with four drill types and instant feedback." data-zh="说&amp;ldquo;逻辑训练&amp;rdquo;或&amp;ldquo;练一下&amp;rdquo;就能进入教练模式，四种题型配即时反馈。">说&ldquo;逻辑训练&rdquo;或&ldquo;练一下&rdquo;就能进入教练模式，四种题型配即时反馈。</span></p>
 <div class="hl-detail">
 <b>A.</b> <span data-en="Fact vs Judgment — distinguish objective from subjective" data-zh="事实 vs 判断 — 区分客观与主观">事实 vs 判断 — 区分客观与主观</span><br>
 <b>B.</b> <span data-en="Deduction vs Induction — spot when premises don't guarantee conclusions" data-zh="演绎 vs 归纳 — 发现前提不保证结论">演绎 vs 归纳 — 发现前提不保证结论</span><br>
@@ -435,12 +459,12 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 <div class="wf-row">
 <div class="wf-name">🚀 <span data-en="Quick (default)" data-zh="快捷模式（默认）">快捷模式（默认）</span></div>
 <div class="wf-scene"><span data-en="Paste → diagnose → restructure → polished output" data-zh="贴文本 → 诊断 → 重组 → 优化输出">贴文本 → 诊断 → 重组 → 优化输出</span></div>
-<div class="wf-trigger"><span data-en="Text pasted + trigger words like &quot;fix the logic&quot;" data-zh="贴了文本 + 触发词如"帮我理清逻辑"">贴了文本 + 触发词如"帮我理清逻辑"</span></div>
+<div class="wf-trigger"><span data-en="Text pasted + trigger words like &quot;fix the logic&quot;" data-zh="贴了文本 + 触发词如&amp;ldquo;帮我理清逻辑&amp;rdquo;">贴了文本 + 触发词如&ldquo;帮我理清逻辑&rdquo;</span></div>
 </div>
 <div class="wf-row">
 <div class="wf-name">💬 <span data-en="Guided" data-zh="引导模式">引导模式</span></div>
 <div class="wf-scene"><span data-en="Dialogue-driven pyramid construction from fuzzy ideas" data-zh="对话引导，从模糊想法构建金字塔">对话引导，从模糊想法构建金字塔</span></div>
-<div class="wf-trigger"><span data-en="&quot;Help me organize my thoughts&quot; / &quot;I don't know how to structure this&quot;" data-zh="说"帮我理清思路""不知道怎么组织"">说"帮我理清思路""不知道怎么组织"</span></div>
+<div class="wf-trigger"><span data-en="&quot;Help me organize my thoughts&quot; / &quot;I don't know how to structure this&quot;" data-zh="说&amp;ldquo;帮我理清思路&amp;rdquo;&amp;ldquo;不知道怎么组织&amp;rdquo;">说&ldquo;帮我理清思路&rdquo;&ldquo;不知道怎么组织&rdquo;</span></div>
 </div>
 </div>
 </div></section>
@@ -448,7 +472,7 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 <!-- CTA -->
 <section class="cta-section"><div class="container">
 <h2><span data-en="Stop <em>fumbling for structure</em>.<br><em>Conclusion first, airtight logic.</em>" data-zh="别再<em>组织不起语言</em>。<br><em>结论先行，逻辑密不透风。</em>">别再<em>组织不起语言</em>。<br><em>结论先行，逻辑密不透风。</em></span></h2>
-<p><span data-en="7 logic diseases, 4 SCQA variants, 1 pyramid — turning &quot;I know what I want to say but can't organize it&quot; into structured, airtight expression." data-zh="7 类逻辑病、4 种 SCQA 变体、一座金字塔——把"我知道想说什么但组织不起来"变成结论先行、论据在下、逻辑密不透风。">7 类逻辑病、4 种 SCQA 变体、一座金字塔——把"我知道想说什么但组织不起来"变成结论先行、论据在下、逻辑密不透风。</span></p>
+<p><span data-en="7 logic diseases, 4 SCQA variants, 1 pyramid &mdash; turning &quot;I know what I want to say but can't organize it&quot; into structured, airtight expression." data-zh="7 类逻辑病、4 种 SCQA 变体、一座金字塔——把&amp;ldquo;我知道想说什么但组织不起来&amp;rdquo;变成结论先行、论据在下、逻辑密不透风。">7 类逻辑病、4 种 SCQA 变体、一座金字塔——把&ldquo;我知道想说什么但组织不起来&rdquo;变成结论先行、论据在下、逻辑密不透风。</span></p>
 <div class="hero-actions">
 <a href="https://github.com/muippt/mu-pyramid-principle/archive/refs/tags/v1.2.0.zip" class="btn btn-primary" target="_blank"><span data-en="📦 Download Skill" data-zh="📦 下载 Skill">📦 下载 Skill</span></a>
 <a href="https://muippt.github.io/mu-skill-hub/" class="btn btn-secondary" target="_blank"><span data-en="📚 Browse Skill Hub" data-zh="📚 浏览 Skill合集">📚 浏览 Skill合集</span></a>
