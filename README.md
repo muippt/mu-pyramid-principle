@@ -252,6 +252,6 @@ If this helps you turn one messy draft into a clear, conclusion-first document, 
 
 **Acknowledgments**
 - ***The Pyramid Principle: Logic in Writing and Thinking*** by **Barbara Minto** — the methodological foundation of this project. The MECE principle, SCQA framework, and top-down/bottom-up construction paths are all derived from her work.
-- **木老师 (Mu Laoshi)** — the three-element logic validation model (观点-论据-数据) is derived from his methodology practice.
+- the three-element logic validation model is derived from his methodology practice.
 
 **AI Co-creation Declaration**: This skill was co-created with AI assistance. The methodology framework is based on the works cited above; the skill structure, diagnostic standards, and output templates were designed and iterated through human-AI collaboration.
