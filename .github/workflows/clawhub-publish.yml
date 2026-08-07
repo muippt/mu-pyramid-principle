@@ -1,0 +1,35 @@
+# ClawHub Skill 自动发布 workflow
+# 前置条件：
+#   1. 在 clawhub.ai 注册账号（用 GitHub 登录）
+#   2. 在 clawhub.ai 个人设置 → API Tokens → Create Token
+#   3. 在 GitHub 仓库 Settings → Secrets → Actions → New repository secret
+#      名称：CLAWHUB_TOKEN，值：上一步生成的 token（clh_xxx）
+
+name: Publish to ClawHub
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install ClawHub CLI
+        run: npm install -g clawhub@latest
+
+      - name: Publish to ClawHub
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+        run: |
+          mkdir -p "$HOME/.config/clawhub"
+          echo "{\"registry\":\"https://clawhub.ai\",\"token\":\"$CLAWHUB_TOKEN\"}" > "$HOME/.config/clawhub/config.json"
+          clawhub skill publish . --owner muippt
