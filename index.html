@@ -39,6 +39,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,247,
 .lang-switch span.active{background:var(--accent);color:#fff}
 .lang-switch span:hover:not(.active){color:var(--text);background:var(--bg-warm)}
 .nav-cta{padding:7px 18px;border-radius:7px;font-size:0.82rem;font-weight:600;background:var(--text);color:var(--bg);transition:all var(--transition);white-space:nowrap}
+.theme-toggle{width:34px;height:34px;border-radius:7px;border:1px solid var(--border);background:var(--bg-card);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:all var(--transition);line-height:1}
+.theme-toggle:hover{border-color:var(--accent);transform:translateY(-1px)}
 .nav-cta:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
 
 /* Hero */
@@ -124,27 +126,26 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 .footer-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .footer-badges img{height:20px;display:block}
 
-/* Dark mode */
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg:#1a1918;--bg-warm:#211f1d;--bg-card:#262422;--bg-code:#2a2826;
-    --border:#3d3832;--border-light:#332f2a;
-    --text:#e8e2db;--text-secondary:#a09890;--text-muted:#706860;
-    --accent:#e8a07a;--accent-light:#c96442;--accent-bg:rgba(232,160,122,0.1);
-    --green:#7aaa8a;--blue:#7a9aba;--purple:#9a8aba;--red:#e0907a;
-  }
-  nav{background:rgba(26,25,24,0.9)}
-  .comparison-table thead th{background:var(--bg-warm)}
-  .comparison-table{background:var(--bg-card)}
-  .comparison-table tbody tr:hover{background:var(--bg-warm)}
-  .btn-secondary{background:var(--bg-card);color:var(--text);border-color:var(--border)}
-  .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
-  .hero-badge{background:var(--bg-card);border-color:var(--border)}
-  .lang-switch{border-color:var(--border)}
-  .lang-switch span:hover:not(.active){background:var(--bg-warm)}
-  .nav-cta{background:var(--text);color:var(--bg)}
-  footer{background:var(--bg)}
+/* Dark mode (toggled via html.dark class) */
+html.dark{
+  --bg:#1a1918;--bg-warm:#211f1d;--bg-card:#262422;--bg-code:#2a2826;
+  --border:#3d3832;--border-light:#332f2a;
+  --text:#e8e2db;--text-secondary:#a09890;--text-muted:#706860;
+  --accent:#e8a07a;--accent-light:#c96442;--accent-bg:rgba(232,160,122,0.1);
+  --green:#7aaa8a;--blue:#7a9aba;--purple:#9a8aba;--red:#e0907a;
 }
+html.dark nav{background:rgba(26,25,24,0.9)}
+html.dark .comparison-table thead th{background:var(--bg-warm)}
+html.dark .comparison-table{background:var(--bg-card)}
+html.dark .comparison-table tbody tr:hover{background:var(--bg-warm)}
+html.dark .btn-secondary{background:var(--bg-card);color:var(--text);border-color:var(--border)}
+html.dark .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+html.dark .hero-badge{background:var(--bg-card);border-color:var(--border)}
+html.dark .lang-switch{border-color:var(--border)}
+html.dark .lang-switch span:hover:not(.active){background:var(--bg-warm)}
+html.dark .nav-cta{background:var(--text);color:var(--bg)}
+html.dark footer{background:var(--bg)}
+html.dark .theme-toggle{border-color:var(--border);background:var(--bg-card)}
 
 @media(max-width:768px){
   .hero{padding:118px 0 62px}
@@ -176,6 +177,7 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
 </ul>
 <div class="nav-right">
 <div class="lang-switch" id="langSwitch"><span data-lang="zh" class="active">中文</span><span data-lang="en">EN</span></div>
+<div class="theme-toggle" id="themeToggle" title="Toggle dark mode">☀️</div>
 <a href="https://muippt.github.io/mu-skill-hub/" class="nav-cta" target="_blank"><span data-en="Skill Hub" data-zh="Skill合集">Skill合集</span></a>
 </div>
 </div></nav>
@@ -501,6 +503,17 @@ footer{padding:44px 0 52px;background:var(--bg);border-top:1px solid var(--borde
   }
   spans.forEach(function(s){s.addEventListener('click',function(){applyLang(s.getAttribute('data-lang'))})});
   applyLang('zh');
+
+  /* Theme toggle */
+  var tb=document.getElementById('themeToggle');
+  var html=document.documentElement;
+  function setTheme(dark){
+    html.classList.toggle('dark',dark);
+    tb.textContent=dark?'🌙':'☀️';
+  }
+  /* Init: follow system preference */
+  if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){setTheme(true)}
+  tb.addEventListener('click',function(){setTheme(!html.classList.contains('dark'))});
 })();
 </script>
 </body>
