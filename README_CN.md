@@ -252,6 +252,6 @@ git clone https://github.com/muippt/mu-pyramid-principle.git ~/.claude/skills/mu
 
 **致谢**
 - **《金字塔原理》（*The Pyramid Principle: Logic in Writing and Thinking*）** —— 作者 **Barbara Minto**，本项目的方法论根基。MECE 原则、SCQA 框架、自上而下与自下而上的构建路径，均源自她的著作。本 Skill 只是把它改造成可以直接跑起来的操作版本；原书仍然是不可替代的正典，值得完整读一遍。
--逻辑三要素校验模型（观点-论据-数据）源自其方法论实践。
+- 逻辑三要素校验模型（观点-论据-数据）源自其方法论实践。
 
 > 声明：本项目大部分内容由 AI 辅助完成。如您认为您的作品被使用但未获得适当署名，请提交 issue。
